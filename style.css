@@ -1,0 +1,80 @@
+body {
+	margin: 0px 0px;
+	min-height: 400px;
+}
+
+#banner{
+	width: 50%;
+	margin-top:5%;
+	border-radius: 15px;
+}
+
+#header {
+	background-color: black;
+	height: 60px;
+}
+
+#footer {
+        text-align: center;
+        font-size: 1.2em !important;
+}
+
+#header, #footer {
+        padding: 2px;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        background: black;
+        color: #00FF00;
+	font-family: Avant Garde;
+}
+
+#header p {
+	display: inline-block;
+	font-size: 1.2em;
+	float: left;
+	margin: 10px;
+
+}
+
+#navigation {
+	display: inline-block;
+	float: right;
+	margin: 10px;
+
+}
+
+a{
+	text-decoration: none;
+}
+
+#navigation a {
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+	font-size: 1.2em;
+}
+
+#navigation a:hover {
+	background-color: green;
+}
+
+#content {
+	display: block;
+	margin: 50px 50px;
+	min-height: 450px;
+}
+
+#container{
+	
+}
+
+.topnews {
+	background-color: green;
+	width: 20%;
+	height: 300px;
+	display: inline-block;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+
+}

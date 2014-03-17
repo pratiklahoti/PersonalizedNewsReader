@@ -1,0 +1,130 @@
+Array
+(
+    [0] => Array
+        (
+            [title] => UPA wants CBI to save Manmohan Singh, alleges Sushma Swaraj - Daily News & Analysis
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNGi8bxyLzEc9Hoywp_IpgoaDC4pig&url=http://www.dnaindia.com/india/1822051/report-upa-wants-cbi-to-save-manmohan-singh-alleges-sushma-swaraj
+            [image] => http://nt2.ggpht.com/news/tbn/tq8vi_bQdRUaYM/6.jpg
+            [site_title] => Daily News & Analysis
+            [story] => ... said the under priced sales of coalfields might have cost the exchequer a loss of Rs1.86 lakh crore. The BJP is demanding the resignation of Prime Minister Dr. Manmohan Singh, who was coal minister between 2006-2009, when many of the sales occurred.
+        )
+
+    [1] => Array
+        (
+            [title] => Will Nitish Kumar lock horns with Manmohan Singh in 2014? - Daily News & Analysis
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNF30SzvaNbLNaTJzyX5atH4u-sjsg&url=http://www.dnaindia.com/india/1822085/report-will-nitish-kumar-lock-horns-with-manmohan-singh-in-2014
+            [image] => http://nt0.ggpht.com/news/tbn/AIucFx1sMf-wjM/6.jpg
+            [site_title] => Daily News & Analysis
+            [story] => ... outside the venue of the party's two-day national executive meeting presently underway in the national capital shows Bihar Chief Minister Nitish Kumar as a potential candidate to take on Prime Minister Dr. Manmohan Singh for the coveted throne in 2014.and more »
+        )
+
+)
+
+Pete Cashmore
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Richard Branson, Pete Cashmore Talk Entrepreneurship in Google Hangout - Mashable
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNH6Kd_ZJJ8Xs0q5YA4otxmFC250SA&url=http://mashable.com/2013/04/09/pete-cashmore-richard-branson-hangout/
+            [site_title] => Mashable
+            [story] => Legendary entrepreneur Richard Branson will be on hand with Mashable's own Pete Cashmore for a Google Hangout this morning to discuss travel, business and whatever topics come up. The Hangout coincides with the opening of Virgin America's new ...
+        )
+
+    [1] => Array
+        (
+            [title] => Virgin America touches down in New Jersey - Breaking Travel News (press release)
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNFhGESlDKFzsA4jHnzE1YSQApPqZg&url=http://www.breakingtravelnews.com/news/article/virgin-america-touches-down-in-new-jersey/
+            [image] => http://nt0.ggpht.com/news/tbn/KNwLMOw1jOhDsM/6.jpg
+            [site_title] => Breaking Travel News (press release)
+            [story] => Branson will also join local flyers, Mashable CEO & Founder Pete Cashmore and area partners for a pre-flight Google+ â€œFly Like a Bossâ€ hangout to discuss how technology is changing business and travel. â€œOur new nonstop service from Newark to the West ...and more »
+        )
+
+)
+
+Alia Bhatt
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Stars flaunt hot body in shorts - Bollywood Mantra
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNGnkXtqifmzpS3DuiXuE9MpEuT5Pg&url=http://www.bollywoodmantra.com/news/stars-flaunt-hot-body-in-shorts/11368/
+            [image] => http://nt1.ggpht.com/news/tbn/AbDyZgXGkb5nLM/6.jpg
+            [site_title] => Bollywood Mantra
+            [story] => For instance the Bollywood beauties have decided to shed their clothes and the hunt for comfort in summer has led to the revival of hot pants this season. Alia Bhatt. It seems Alia is the one most affected by the heat. She was recently seen in ...
+        )
+
+    [1] => Array
+        (
+            [title] => Alia Bhatt gets Grounded - Indiatimes.com
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNFQVqSqEmMnnvg1Nrn3tRH0TP1c8w&url=http://www.indiatimes.com/entertainment/bollywood/alia-bhatt-gets-grounded-70528.html
+            [image] => http://nt3.ggpht.com/news/tbn/56jQaVFmsgPUJM/6.jpg
+            [site_title] => Indiatimes.com
+            [story] => Alia Bhatt's first film 'Student of the Year' had her tread on familiar ground. The teen romance was tailor-made for the 20-year-old debutante, who looked at ease in her trendy togs. A far cry from Highway, in which director-writer Imtiaz Ali has ...
+        )
+
+)
+
+Emma Watson
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Emma Watson Pole Dances In 'Bling Ring' Scene (VIDEO) - Huffington Post - Huffington Post
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNF6va30ix6L6kclZk4DLqcyukn51Q&url=http://www.huffingtonpost.com/2013/04/13/emma-watson-pole-dances_n_3076421.html
+            [site_title] => Huffington Post
+            [story] => In the clip, Watson and her friends are in the midst of raiding an unidentified celebrity's closet (though it's clearly intended to be Paris Hilton's) before showing off her pole dancing moves in the star's "night club room" (it's a known fact that ...and more »
+        )
+
+    [1] => Array
+        (
+            [title] => Does Emma Watson Have Harry Styles On Speed Dial? - MTV.com
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNEjwvGKNBbrXTgb5A5-dxEzOJHK7g&url=http://www.mtv.com/news/articles/1705589/emma-watson-harry-styles-friendship.jhtml
+            [image] => http://nt0.ggpht.com/news/tbn/REppDdu8CHL-CM/6.jpg
+            [site_title] => MTV.com
+            [story] => That's when the Rebel Wilson-hosted 2013 MTV Movie Awards go live from Culver City. And, "Perks" is up for four awards, including the Best Female Performance prize for Watson as well as Best Kiss (Watson and Logan Lerman), Breakthrough Performance ...
+        )
+
+)
+
+Rafa Nadal
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Murray, Fed, Rafa work at own pace - ESPN (blog)
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNHJD0UWmTgPcxINkKyQ9PrV2Ssr0g&url=http://espn.go.com/tennis/blog/_/name/bodo_peter/id/9163426/tennis-andy-murray-roger-federer-rafael-nadal-work-own-pace
+            [image] => http://nt3.ggpht.com/news/tbn/zxmjeWIDk2mdiM/6.jpg
+            [site_title] => ESPN (blog)
+            [story] => It's another unique aspect of tennis, a sport with a 10-month season that has been vociferously criticized by Rafael Nadal and others as too demanding, too tiring, too conducive to injury. But the lull we've been living through since the end of the ...
+        )
+
+    [1] => Array
+        (
+            [title] => Can Rafael Nadal Go on to Become the Greatest of All Time? - Bleacher Report
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNHwIyP4IPni3tv0sju-nkvkLTLuew&url=http://bleacherreport.com/articles/1603306-can-rafael-nadal-go-on-to-become-the-goat
+            [image] => http://nt2.ggpht.com/news/tbn/6gEC-NeZgdu-OM/6.jpg
+            [site_title] => Bleacher Report
+            [story] => Having missed seven months recovering from severe tendinitis in both knees, Rafael Nadal announced his return to the ATP tour in February by winning three of the four tournaments he entered and losing in the final of the other. Up until Wimbledon 2012, ...
+        )
+
+)
+
+Omi Vaidya
+
+Array
+(
+    [0] => Array
+        (
+            [title] => onur burak kalyon - Milliyet
+            [link] => http://news.google.com/news/url?sa=t&fd=R&usg=AFQjCNGXq04gPC2TysTIDSQRZUTZUaWFYA&url=http://blog.milliyet.com.tr/3_Idiots/Blog/?BlogNo%3D409635%26ref%3Dmilliyet_anasayfa
+            [image] => http://nt2.ggpht.com/news/tbn/ymuRKty-6NNvrM/6.jpg
+            [site_title] => Milliyet
+            [story] => Ã–zellikle de Omi Vaidya. Onun oynadÄ±ÄŸÄ± Chatur 'Silencer' Ramalingam, hepimizin okul hayatÄ±nda mutlaka karÅŸÄ±mÄ±za Ã§Ä±kan bir Ã¶ÄŸrenci tipidir. Bu filmi bu kadar gÃ¼zel yapan bence bir Hint filmi olmasÄ±. Ã‡Ã¼nkÃ¼ ne Avrupa sinemasÄ± ne de Hollywood kendilerinde ...
+        )
+
+)

@@ -1,0 +1,189 @@
+<?php
+
+require 'tmhOAuth.php';
+require 'tmhUtilities.php';
+$tmhOAuth = new tmhOAuth(array(
+  'consumer_key'    => 'Et0Xstcbix42hJMgMY97g',
+  'consumer_secret' => 'iW9rnWEK1Yprt8mN4lITu7TXe4dhDMcEPkwRbQ4n2zE',
+));
+
+$here = tmhUtilities::php_self();
+session_start();
+
+function outputError($tmhOAuth) {
+  echo 'Error: ' . $tmhOAuth->response['response'] . PHP_EOL;
+  tmhUtilities::pr($tmhOAuth);
+}
+
+// reset request?
+if ( isset($_REQUEST['wipe'])) {
+  session_destroy();
+  header("Location: {$here}");
+
+// already got some credentials stored?
+} elseif ( isset($_SESSION['access_token']) ) {
+  $tmhOAuth->config['user_token']  = $_SESSION['access_token']['oauth_token'];
+  $tmhOAuth->config['user_secret'] = $_SESSION['access_token']['oauth_token_secret'];
+
+  $code = $tmhOAuth->request('GET', $tmhOAuth->url('1/account/verify_credentials'));
+  if ($code == 200) {
+    $resp = json_decode($tmhOAuth->response['response']);
+    $screen_name = $resp->screen_name;
+//    echo "Screen Name: " . $resp->screen_name . "</br>";
+//    echo "User-ID: " . $resp->id_str . "</br>";
+    $convr = ($resp->verified) ? "true" : "false";
+//    echo "Verified: " . $convr . "</br>";
+//    echo "<h3>You are following users with the following User-ID's:</h3></br>";
+/*    $cursor = -1;
+    while($cursor != 0){
+/*    $code = $tmhOAuth->request('GET', $tmhOAuth->url('1.1/friends/list.json?screen_name=pr4tikl4hoti&cursor=' . $cursor/*('1.1/friends/list.json'), array(
+    'screen_name' => $screen_name,*/
+//    'cursor' => strval($cursor)
+//    ));
+ /*   $following = json_decode($tmhOAuth->response['response'], true);
+    foreach($following['users'] as $entry){
+  	if($entry['verified'] == 1){
+	  	echo "Name:" . $entry['name'] . "<br/>";
+	}
+//	echo "Verified:" . $entry['verified'] . "<br/>";
+    }
+    //echo $following['next_cursor_str'];
+    $cursor = $following['next_cursor'];
+    }*/
+    $code = $tmhOAuth->request('GET', $tmhOAuth->url('1.1/friends/ids'), array(
+    'stringify_ids'=> "true",
+    'screen_name'=> $resp->screen_name, 
+    'user_id' => $resp->id_str  
+    ));
+    $user_ids = json_decode($tmhOAuth->response['response'], true);
+    //$list_of_ids =  implode(",", $user_ids['ids']);
+    $list_of_ids = $user_ids['ids'];
+    $chunks_of_ids = array_chunk($list_of_ids, 90);
+    //echo $chunks_of_ids[0];
+    $no_of_chunks = count($chunks_of_ids);
+    //echo $list_of_ids;
+    for ($i=0; $i < $no_of_chunks; $i++){ 
+    $list_of_ids =  implode(",", $chunks_of_ids[$i]);
+     $code = $tmhOAuth->request('GET', $tmhOAuth->url('1.1/users/lookup'), array(
+    'user_id' => $list_of_ids //'352145373,1021419306,742143,183230911,41545005' //implode(',', $user_ids['ids'])
+  ));
+    $follow = json_decode($tmhOAuth->response['response'], true);
+    foreach ($follow as $entry) {
+//      # code...
+      if ($entry['verified']) {
+      //  echo $entry['name'] . "<br/>";
+        //we have verified ones. so get news for each verified one
+        $news = simplexml_load_file('http://news.google.com/news/search?q=' . $entry['name'] . '&output=rss');
+
+        $feeds = array();
+
+        $i = 0;
+
+        foreach ($news->channel->item as $item) 
+        {
+            preg_match('@src="([^"]+)"@', $item->description, $match);
+            $parts = explode('<font size="-1">', $item->description);
+
+            $feeds[$i]['title'] = (string) $item->title;
+            $feeds[$i]['link'] = (string) $item->link;
+            if(isset($match[1]))
+              $feeds[$i]['image'] = 'http:' . $match[1];
+            $feeds[$i]['site_title'] = strip_tags($parts[1]);
+            $feeds[$i]['story'] = strip_tags($parts[2]);
+
+            $i++;
+          if($i == 4)
+            break;
+        }
+
+//        echo '<pre>';
+  //      print_r($feeds);
+    //    echo '</pre>';
+
+      }
+      
+    }
+    
+  }
+
+  } else {
+    outputError($tmhOAuth);
+  }
+// we're being called back by Twitter
+} elseif (isset($_REQUEST['oauth_verifier'])) {
+  $tmhOAuth->config['user_token']  = $_SESSION['oauth']['oauth_token'];
+  $tmhOAuth->config['user_secret'] = $_SESSION['oauth']['oauth_token_secret'];
+
+  $code = $tmhOAuth->request('POST', $tmhOAuth->url('oauth/access_token', ''), array(
+    'oauth_verifier' => $_REQUEST['oauth_verifier']
+  ));
+
+  if ($code == 200) {
+    $_SESSION['access_token'] = $tmhOAuth->extract_params($tmhOAuth->response['response']);
+    unset($_SESSION['oauth']);
+    header("Location: {$here}");
+  } else {
+    outputError($tmhOAuth);
+  }
+// start the OAuth dance
+} elseif ( isset($_REQUEST['authenticate']) || isset($_REQUEST['authorize']) ) {
+  $callback = isset($_REQUEST['oob']) ? 'oob' : $here;
+
+  $params = array(
+    'oauth_callback'     => $callback
+  );
+
+  if (isset($_REQUEST['force_write'])) :
+    $params['x_auth_access_type'] = 'write';
+  elseif (isset($_REQUEST['force_read'])) :
+    $params['x_auth_access_type'] = 'read';
+  endif;
+
+  $code = $tmhOAuth->request('POST', $tmhOAuth->url('oauth/request_token', ''), $params);
+
+  if ($code == 200) {
+    $_SESSION['oauth'] = $tmhOAuth->extract_params($tmhOAuth->response['response']);
+    $method = isset($_REQUEST['authenticate']) ? 'authenticate' : 'authorize';
+    $force  = isset($_REQUEST['force']) ? '&force_login=1' : '';
+    $authurl = $tmhOAuth->url("oauth/{$method}", '') .  "?oauth_token={$_SESSION['oauth']['oauth_token']}{$force}";
+    echo '<p>To complete the OAuth flow follow this URL: <a href="'. $authurl . '">' . $authurl . '</a></p>';
+    header("Location: {$authurl}");
+  } else {
+    outputError($tmhOAuth);
+  }
+}
+
+?>
+<!--<ul>
+  <li><a href="?authenticate=1">Sign in with Twitter</a></li>
+  <li><a href="?wipe=1">Start Over and delete stored tokens</a></li>
+</ul>-->
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>
+	Personalized News Reader
+	</title>
+	<link type="text/css" rel="stylesheet" href="../style.css"/>
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+	<div id="header">
+		<p>Personalized News Reader</p>
+		<div id="navigation">
+			<a href="?wipe=1">Logout</a>
+		</div>
+	</div>
+	<div id="content">
+		<div id="container">
+			
+		</div>
+	</div>
+	<div id="footer">
+		<p>&copy Commando Coders CoEP<p>
+	</div>
+
+</body>
+</html>
